@@ -1,1 +1,1 @@
-ssh root@10.10.60.105 'sh /root/reinitall.sh'
+ssh root@10.10.60.43 'sh /root/reinitall.sh'

@@ -215,7 +215,8 @@ command! -nargs=1 Find :call Find("<args>")
 
 " Find file in current directory and edit it.
 function! RFind(name)
-	let l:list=system("grep -slr '".a:name."'  test grails-app scripts *.groovy src web-app *.yaml *.c *.h | grep -v '\.class' | grep -v '\.swp' | perl -ne 'print \"$.\\t$_\"'")
+	let l:list=system("grep -sl '".a:name."'  $(find . -name \"*.java\" -o -name \"*.groovy\" -o -name \"*.c\" -o -name \"*.gsp\" -o -name \"*.html\" -o -name \"*.xml\" -o -name \"*.js\")'")
+
 	let l:num=strlen(substitute(l:list, "[^\n]", "", "g"))
 	if l:num < 1
 		echo "'".a:name."' not found"
