@@ -5,3 +5,15 @@ Added:
 - Snipmate
 http://www.vim.org/scripts/script.php?script_id=2540
 - :GI or :GIdent to ident groovy
+
+
+Installing:
+
+	ln -s ~/dev/dot-files/gitconfig .gitconfig
+	ln -s ~/dev/dot-files/vim .vim
+	ln -s ~/dev/dot-files/vimrc .vimrc
+	ln -s ~/dev/dot-files/bashrc .bashrc
+
+Checking:
+
+	ls -lh .vim .vimrc .bashrc .gitconfig
