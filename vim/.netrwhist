@@ -1,6 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/dnoseda/dev/payments-api'
-let g:netrw_dirhist_2='/home/dnoseda/dev/payments-api/grails-app'
-let g:netrw_dirhist_3='/home/dnoseda/dev/payments-api/grails-app/services'
-let g:netrw_dirhist_4='/home/dnoseda/dev/payments-api/grails-app/services/payments'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/dnoseda/dev/payments-user-api/webserver/meli'
+let g:netrw_dirhist_2='/home/dnoseda/dev/payments-user-api/webserver/meli/conf'
+let g:netrw_dirhist_3='/home/dnoseda/dev/payments-user-api/webserver/meli'
+let g:netrw_dirhist_4='/home/dnoseda/dev/payments-user-api/webserver'
+let g:netrw_dirhist_5='/home/dnoseda/dev/payments-user-api'
+let g:netrw_dirhist_6='/home/dnoseda/dev/payments-user-api/webserver'
+let g:netrw_dirhist_7='webserver'
+let g:netrw_dirhist_8='webserver/meli'
+let g:netrw_dirhist_9='webserver/meli/bin'
