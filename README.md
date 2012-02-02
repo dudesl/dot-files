@@ -19,6 +19,8 @@ Based on eclim and http://items.sjbach.com/319/configuring-vim-right and another
 
 ### Installing:
 
+	cd ~
+	ln -s ~/dev/dot-files/bin bin
 	ln -s ~/dev/dot-files/gitconfig .gitconfig
 	ln -s ~/dev/dot-files/vim .vim
 	ln -s ~/dev/dot-files/vimrc .vimrc
