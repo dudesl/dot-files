@@ -116,8 +116,8 @@ nmap <C-j> :bn<CR>
 map <s-t> :tabe %<cr>
 "nmap <TAB> :b#<CR>
 "nmap <C-q> :bd<CR>
-nmap <C-d> :bw<CR>
 vmap <C-d> :bw<CR>
+nmap <C-d> :bw<CR>
 
 " Toggle highlighting
 " nmap <silent> <C-n> :silent :set nohls!<CR>:silent :set nohls?<CR>
@@ -261,6 +261,7 @@ function! GIdent()
 	execute ':g/{\s*\n/normal j0>i{'
 	execute ':g/->\s*\n/normal j0>i{<<'
 	execute ':g/\[\s*\n/normal j0>i['
+	execute ':g/(\s*\n/normal j0>i('
 endfunction
 command! -nargs=0 GIdent :call GIdent()
 
