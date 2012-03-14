@@ -112,6 +112,7 @@ alias v='gvim --remote-silent'
 alias jsonpretty='python -mjson.tool'
 alias rpl='sh ~/bin/rpl.sh'
 alias rr='echo "restoring resolv.conf"; sudo cp ~/bkpapt/resolv.conf /etc/resolv.conf'
+alias lynx='lynx --accept-all-cookies'
 
 # ORACLE_HOME=/usr/lib/oracle/xe/app/oracle/product/10.2.0/server
 # export ORACLE_HOME
