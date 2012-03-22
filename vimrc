@@ -182,9 +182,42 @@ nnoremap <silent> <buffer> <leader>i :JavaImport<cr>
 nnoremap <silent> <buffer> <leader>e :JavaCorrect<cr>
 nnoremap <silent> <buffer> <leader>w :w<CR>
 
+
+" EFind file in current directory and edit it.
+function! EFind(name)
+	let l:list=system("find . -name '".a:name.".*' | grep -v '\.class' | grep -v '/target/' | sort | perl -ne 'print \"$.\\t$_\"'")
+	let l:num=strlen(substitute(l:list, "[^\n]", "", "g"))
+	if l:num < 1
+		echo "'".a:name."' not found"
+		return
+	endif
+	if l:num != 1
+		echo l:list
+		let l:input=input("Which ? (CR=nothing)\n")
+		if strlen(l:input)==0
+			return
+		endif
+		if strlen(substitute(l:input, "[0-9]", "", "g"))>0
+			echo "Not a number"
+			return
+		endif
+		if l:input<1 || l:input>l:num
+			echo "Out of range"
+			return
+		endif
+		let l:line=matchstr("\n".l:list, "\n".l:input."\t[^\n]*")
+	else
+		let l:line=l:list
+	endif
+	let l:line=substitute(l:line, "^[^\t]*\t./", "", "")
+	execute ":tabe ".l:line
+endfunction
+command! -nargs=1 EFind :call EFind("<args>")
+
 " Find file in current directory and edit it.
 function! Find(name)
-	let l:list=system("find . -name '".a:name."*' | grep -v '\.class' | grep -v '/target/' | sort | perl -ne 'print \"$.\\t$_\"'")
+	"let l:list=system("find . -name '".a:name."*' | grep -v '\.class' | grep -v '/target/' | sort | perl -ne 'print \"$.\\t$_\"'")
+	let l:list=system("find . -name '".substitute(a:name,"","*","g")."' | grep -v '\.class' | grep -v '/target/' | sort | perl -ne 'print \"$.\\t$_\"'")
 	let l:num=strlen(substitute(l:list, "[^\n]", "", "g"))
 	if l:num < 1
 		echo "'".a:name."' not found"
@@ -216,7 +249,13 @@ command! -nargs=1 Find :call Find("<args>")
 " Find file in current directory and edit it.
 function! RFind(name)
 	"let l:list=system("grep -slr '".a:name."'  test grails-app scripts *.groovy src web-app *.yaml *.c *.h | grep -v '\.class' | grep -v '\.swp' | perl -ne 'print \"$.\\t$_\"'")
-	let l:list=system("grep -slr '".a:name."'  $(find . -name \"*.groovy\" -o -name \"*.java\" -o -name \"*.html\" -o -name \"*.gsp\" -o -name \"*.sql\" -o -name \"*.xml\" -o -name \"*.yaml\" | grep -v \"/target/\") | perl -ne 'print \"$.\\t$_\"'")
+
+	"let l:list=system("grep -slr '".a:name."'  $(find data2 -name \"*.xml\") | perl -ne 'print \"$.\\t$_\"'")
+	"let l:num=strlen(substitute(l:list, "[^\n]", "", "g"))
+
+	"if l:num < 1
+          let l:list=system("grep -slr '".a:name."'  $(find . -name \"*.groovy\" -o -name \"*.java\" -o -name \"*.html\" -o -name \"*.gsp\" -o -name \"*.sql\" -o -name \"*.xml\" -o -name \"*.yaml\" | grep -v \"/target/\") | perl -ne 'print \"$.\\t$_\"'")
+        "endif
 
 	let l:num=strlen(substitute(l:list, "[^\n]", "", "g"))
 	if l:num < 1
@@ -242,6 +281,8 @@ function! RFind(name)
 		let l:line="_".l:list
 	endif
 	let l:line=substitute(l:line, "^[^\t]*\t./", "", "")
+	let l:line=substitute(l:line, ".*\t", "", "")
+	echo "por abrir ".l:line
 	execute ":tabe ".l:line
 endfunction
 command! -nargs=1 RFind :call RFind("<args>")
@@ -321,7 +362,7 @@ nmap <F3> *"zyiw:exe "RF ".@z.""<CR>
 vmap <F3> "zy:exe "RF ".@z.""<CR>
 
 " find files with name matching the word
-nmap <F4> "zyiw:exe "F ".@z.""<CR>
+nmap <F4> "zyiw:exe "EF ".@z.""<CR>
 
 " sobre un log abre archivo en la linea indicada
 nmap <F2> "zyiwf:l"xyw:exe "F ".@z.""<CR>:exe "".@x.""<CR>
