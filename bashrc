@@ -287,3 +287,4 @@ export http_proxy=
 export ftp_proxy=
 export https_proxy=
 export JAVA_OPTS=
+source ~/sources/private-url.sh
