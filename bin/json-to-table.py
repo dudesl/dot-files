@@ -62,7 +62,7 @@ for row in json_content['rows']:
             val = row[index[i]]
         else:
             val = ''
-        html.append( '<td>'+val+'</td>')
+        html.append( '<td>'+unicode(val).encode("utf-8")+'</td>')
         line = line + val + SEP
     print line
     html.append( '</tr>')
@@ -70,10 +70,12 @@ for row in json_content['rows']:
 
 html.append( '</tbody>')
 html.append( '</table></body></html>')
+reload(sys)
+sys.setdefaultencoding( "latin-1" )
 
 
 
 web = open('web.html', "w")
-web.write('\n'.join(html))
+web.write(unicode('\n'.join(html)).encode("utf-8"))
 
 web.close()
