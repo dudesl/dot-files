@@ -75,7 +75,7 @@ sys.setdefaultencoding( "latin-1" )
 
 
 
-web = open('web.html', "w")
+web = open('/tmp/results-web.html', "w")
 web.write(unicode('\n'.join(html)).encode("utf-8"))
 
 web.close()

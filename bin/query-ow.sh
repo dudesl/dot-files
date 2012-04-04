@@ -7,8 +7,8 @@ echo '    },' >> topost.js.log
 echo "    \"request_body\": \"{\\\"schema\\\": \\\"orange\\\", \\\"query\\\": \\\"$1\\\"}\"" >> topost.js.log
 echo '}' >> topost.js.log
 
-curl -vso temp.log -H "Content-type: application/json" -X POST -d @topost.js.log $GENERIC_TESTING_URL | python -mjson.tool
+curl -vso /tmp/results.log -H "Content-type: application/json" -X POST -d @topost.js.log $GENERIC_TESTING_URL | python -mjson.tool
 
-python ~/bin/json-to-table.py temp.log
-google-chrome web.html &
+python ~/bin/json-to-table.py /tmp/results.log
+google-chrome /tmp/results-web.html 2> /dev/null &
 
