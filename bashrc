@@ -288,3 +288,4 @@ export ftp_proxy=
 export https_proxy=
 export JAVA_OPTS=
 source ~/sources/private-url.sh
+alias query='sh ~/bin/query-ow.sh'

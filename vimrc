@@ -345,6 +345,8 @@ function! ExecuteFile()
     execute "!maruku %"
   elseif stridx(file, ".md") != -1
     execute "!maruku %"
+  elseif stridx(file, ".py") != -1
+    execute "!python %"
   elseif stridx(file, ".sass") != -1
     execute "!sass % " . substitute(file, "\.sass$", ".css", "")
   elseif stridx(file, ".html") != -1
