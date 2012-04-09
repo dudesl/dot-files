@@ -289,3 +289,4 @@ export https_proxy=
 export JAVA_OPTS=
 source ~/sources/private-url.sh
 alias query='sh ~/bin/query-ow.sh'
+alias restr='sh ~/bin/restr.sh'
