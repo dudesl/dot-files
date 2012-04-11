@@ -290,3 +290,4 @@ export JAVA_OPTS=
 source ~/sources/private-url.sh
 alias query='sh ~/bin/query-ow.sh'
 alias restr='sh ~/bin/restr.sh'
+alias get_p='sh ~/bin/get_p.sh'
