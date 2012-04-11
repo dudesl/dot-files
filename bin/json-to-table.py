@@ -42,6 +42,7 @@ html.append( '       			$(document).ready(function() {')
 html.append( '       				$(\'#results\').dataTable();')
 html.append( '       			} );')
 html.append( '       		</script>')
+html.append( '<h3>'+json_content['query']+'</h3>')
 html.append( '       </head><body><table id="results"><thead>')
 line = ''
 html.append( '<tr>')

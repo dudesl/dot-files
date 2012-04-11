@@ -430,4 +430,6 @@ let g:netrw_browse_split=4 " Open file in previous buffer
 hi LineNr ctermfg=lightgrey ctermbg=darkgray
 
 
-
+" copy paste with xclip + F7
+vmap <F7> :!xclip -sel clip<CR>ugv
+map <S-F7> :r!xclip -o<CR>
