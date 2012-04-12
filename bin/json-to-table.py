@@ -88,9 +88,10 @@ html.append( '       <script type="text/javascript" charset="utf-8">')
 html.append( '       			$(document).ready(function() {')
 html.append( '       				$(\'#results\').dataTable();')
 html.append( '       				$(\'pre.sql\').snippet(\'sql\',{style:\'bright\'});')
+html.append( '       				$(\'pre.javascript\').snippet(\'javascript\',{style:\'bright\'});')
 html.append( '       			} );')
 html.append( '       		</script>')
-html.append( '<b>query:</b>')
+html.append( '<h4>query:</h4>')
 
 insensitive_select = re.compile(re.escape('select'), re.IGNORECASE)
 insensitive_from = re.compile(re.escape('from'), re.IGNORECASE)
@@ -130,7 +131,10 @@ for row in json_content['rows']:
     line = ''
 
 html.append( '</tbody>')
-html.append( '</table></body></html>')
+html.append( '</table>')
+html.append('<p><h4>Json</h4>')
+html.append('<pre class=\'javascript\'>'+json.dumps(json_content['rows'], sort_keys=True, indent=4)+'</pre></p>')
+html.append('</body></html>')
 reload(sys)
 sys.setdefaultencoding( "latin-1" )
 
