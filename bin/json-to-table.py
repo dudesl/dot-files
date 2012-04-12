@@ -1,6 +1,6 @@
 import json
 import sys
-
+import re
 
 filename = sys.argv[1]
 #filename = 'example.js'
@@ -91,7 +91,18 @@ html.append( '       				$(\'pre.sql\').snippet(\'sql\',{style:\'bright\'});')
 html.append( '       			} );')
 html.append( '       		</script>')
 html.append( '<b>query:</b>')
-html.append( '<pre class=\'sql\'>'+json_content['query']+'</pre>')
+
+insensitive_select = re.compile(re.escape('select'), re.IGNORECASE)
+insensitive_from = re.compile(re.escape('from'), re.IGNORECASE)
+insensitive_where = re.compile(re.escape('where'), re.IGNORECASE)
+insensitive_and = re.compile(re.escape('and'), re.IGNORECASE)
+query = json_content['query']
+query = insensitive_select.sub("SELECT",query)
+query = insensitive_where.sub("\nWHERE",query)
+query = insensitive_from.sub("\nFROM",query)
+query = insensitive_and.sub("\n\tAND",query)
+
+html.append( '<pre class=\'sql\'>'+query+'</pre>')
 html.append( '       </head><body><table id="results"><thead>')
 line = ''
 html.append( '<tr>')
