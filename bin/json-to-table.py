@@ -93,15 +93,11 @@ html.append( '       			} );')
 html.append( '       		</script>')
 html.append( '<h4>query:</h4>')
 
-insensitive_select = re.compile(re.escape('select'), re.IGNORECASE)
-insensitive_from = re.compile(re.escape('from'), re.IGNORECASE)
-insensitive_where = re.compile(re.escape('where'), re.IGNORECASE)
-insensitive_and = re.compile(re.escape('and'), re.IGNORECASE)
+key_words = ['select','from','and','order','where','as']
 query = json_content['query']
-query = insensitive_select.sub("SELECT",query)
-query = insensitive_where.sub("\nWHERE",query)
-query = insensitive_from.sub("\nFROM",query)
-query = insensitive_and.sub("\n\tAND",query)
+for key_word in key_words:
+    insensisive = re.compile(re.escape(key_word), re.IGNORECASE)
+    query = insensisive.sub('\n'+key_word.upper(),query)
 
 html.append( '<pre class=\'sql\'>'+query+'</pre>')
 html.append( '       </head><body><table id="results"><thead>')

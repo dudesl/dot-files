@@ -291,3 +291,8 @@ source ~/sources/private-url.sh
 alias query='sh ~/bin/query-ow.sh'
 alias restr='sh ~/bin/restr.sh'
 alias get_p='sh ~/bin/get_p.sh'
+alias sqldev='nohup sh ~/soft/sqldeveloper/sqldeveloper.sh > /dev/null 2> /dev/null &'
+
+export JAVA_HOME=/usr/lib/jvm/java-6-sun-1.6.0.21/
+export PATH=$JAVA_HOME/bin:$PATH
+
