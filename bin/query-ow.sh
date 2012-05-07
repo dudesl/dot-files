@@ -10,5 +10,5 @@ echo '}' >> topost.js.log
 curl -vso /tmp/results.log -H "Content-type: application/json" -X POST -d @topost.js.log $GENERIC_TESTING_URL | python -mjson.tool
 
 python ~/bin/json-to-table.py /tmp/results.log
-google-chrome /tmp/results-web.html 2> /dev/null &
+google-chrome /tmp/results-web.html > /dev/null 2> /dev/null & 
 
