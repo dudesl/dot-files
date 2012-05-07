@@ -366,6 +366,10 @@ vmap <F3> "zy:exe "RF ".@z.""<CR>
 " find files with name matching the word
 nmap <F4> "zyiw:exe "EF ".@z.""<CR>
 
+
+" go to implementation
+nmap gi "zyiw:exe "F ".@z."Impl"<CR>
+
 " sobre un log abre archivo en la linea indicada
 nmap <F2> "zyiwf:l"xyw:exe "F ".@z.""<CR>:exe "".@x.""<CR>
 nmap <Space> :
