@@ -93,7 +93,7 @@ html.append( '       			} );')
 html.append( '       		</script>')
 html.append( '<h4>query:</h4>')
 
-key_words = ['select','from','and','order','where','as']
+key_words = ['select','from','and','order','where','as','like']
 query = json_content['query']
 for key_word in key_words:
     insensisive = re.compile(re.escape(key_word), re.IGNORECASE)
