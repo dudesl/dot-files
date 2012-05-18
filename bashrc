@@ -293,7 +293,8 @@ alias restr='sh ~/bin/restr.sh'
 alias get_p='sh ~/bin/get_p.sh'
 alias sqldev='nohup sh ~/soft/sqldeveloper/sqldeveloper.sh > /dev/null 2> /dev/null &'
 alias webonliner='ifconfig | head -2 ; python -m SimpleHTTPServer'
+alias robin='ssh 172.16.0.23'
 
-export JAVA_HOME=/usr/lib/jvm/java-6-sun-1.6.0.21/
+export JAVA_HOME=/usr/lib/jvm/java-6-sun-1.6.0.26/
 export PATH=$JAVA_HOME/bin:$PATH
 
