@@ -294,6 +294,6 @@ alias get_p='sh ~/bin/get_p.sh'
 alias sqldev='nohup sh ~/soft/sqldeveloper/sqldeveloper.sh > /dev/null 2> /dev/null &'
 alias webonliner='ifconfig | head -2 ; python -m SimpleHTTPServer'
 
-export JAVA_HOME=/usr/lib/jvm/java-6-sun-1.6.0.21/
+export JAVA_HOME=/usr/lib/jvm/jdk1.6.0_32/
 export PATH=$JAVA_HOME/bin:$PATH
 

@@ -306,6 +306,13 @@ function! GIdent()
 endfunction
 command! -nargs=0 GIdent :call GIdent()
 
+
+" jsonpretty
+function! JSPretty()
+	execute ':r!cat % | python -mjson.tool'
+endfunction
+command! -nargs=0 JSPretty :call JSPretty()
+
 cmap w!! %!sudo tee > /dev/null %
 
 
@@ -437,3 +444,4 @@ hi LineNr ctermfg=lightgrey ctermbg=darkgray
 " copy paste with xclip + F7
 vmap <F7> :!xclip -sel clip<CR>ugv
 map <S-F7> :r!xclip -o<CR>
+
