@@ -7,9 +7,11 @@
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
-HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
+#HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
+# history with timestamp
+export HISTTIMEFORMAT=' %F %T '
 # ... or force ignoredups and ignorespace
-HISTCONTROL=ignoreboth
+#HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -127,6 +129,7 @@ export REDIS_HOME=~/soft/redis
 # para historico
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
+export HISTFILESIZE=10000
 shopt -s histappend
 
 # para app-engine
@@ -294,6 +297,8 @@ alias get_p='sh ~/bin/get_p.sh'
 alias sqldev='nohup sh ~/soft/sqldeveloper/sqldeveloper.sh > /dev/null 2> /dev/null &'
 alias webonliner='ifconfig | head -2 ; python -m SimpleHTTPServer'
 alias robin='ssh 172.16.0.23'
+alias sqld='nohup ~/soft/sqldeveloper/sqldeveloper.sh &'
+alias sublime='nohup ~/soft/Sublime\ Text\ 2/sublime_text &'
 
 export JAVA_HOME=/usr/lib/jvm/java-6-sun/
 export PATH=$JAVA_HOME/bin:$PATH

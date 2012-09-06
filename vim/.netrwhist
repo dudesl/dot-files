@@ -1,2 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/dnoseda/dev/payments-api/webserver/grails-app/domain'
+let g:netrw_dirhist_2='/home/dnoseda/dev/payments-api/webserver/grails-app/domain/grailspaymentsapi'
+let g:netrw_dirhist_3='webserver/grails-app/domain'
+let g:netrw_dirhist_4='webserver/grails-app/domain/grailspaymentsapi'
+let g:netrw_dirhist_5='/home/dnoseda/dev/payment_worker/src/com/mp/payments/worker'
+let g:netrw_dirhist_6='webserver/src/groovy/grailspaymentsapi/doc'
+let g:netrw_dirhist_7='/home/dnoseda/dev/payments-api/webserver/src/groovy/grailspaymentsapi/doc'
