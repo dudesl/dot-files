@@ -378,7 +378,7 @@ nmap <F4> "zyiw:exe "EF ".@z.""<CR>
 nmap gi "zyiw:exe "F ".@z."Impl"<CR>
 
 " sobre un log abre archivo en la linea indicada
-nmap <F2> "zyiwf:l"xyw:exe "F ".@z.""<CR>:exe "".@x.""<CR>
+nmap <F2> "zyiwf:l"xyw:exe "EF ".@z.""<CR>:exe "".@x.""<CR>
 nmap <Space> :
 
 

@@ -299,6 +299,7 @@ alias webonliner='ifconfig | head -2 ; python -m SimpleHTTPServer'
 alias robin='ssh 172.16.0.23'
 alias sqld='nohup ~/soft/sqldeveloper/sqldeveloper.sh &'
 alias sublime='nohup ~/soft/Sublime\ Text\ 2/sublime_text &'
+alias melish='~/soft/melicloud-commandline/meli.sh'
 
 export JAVA_HOME=/usr/lib/jvm/java-6-sun/
 export PATH=$JAVA_HOME/bin:$PATH
