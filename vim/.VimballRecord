@@ -1,1 +1,2 @@
 snippy_plugin.vba: call delete('/home/dnoseda/.vim/plugin/snippetsEmu.vim')|call delete('/home/dnoseda/.vim/doc/snippets_emu.txt')
+tail-3.0.vba: call delete('/Users/dnoseda/.vim/tail_options.vim')|call delete('/Users/dnoseda/.vim/autoload/tail.vim')|call delete('/Users/dnoseda/.vim/doc/tail.txt')|call delete('/Users/dnoseda/.vim/macros/vim-tail.zsh')|call delete('/Users/dnoseda/.vim/plugin/tail.vim')

@@ -309,11 +309,42 @@ alias melish='~/soft/melicloud-commandline/meli.sh'
 #export JAVA_HOME=/usr/lib/jvm/java-6-sun/
 #export PATH=$JAVA_HOME/bin:$PATH
 
-#export GRAILS_HOME=~/soft/grails-1.3.7/
-export GRAILS_HOME=~/soft/grails-2.1.1/
-export PATH=$GRAILS_HOME/bin:$PATH
 export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=~/dev/OTHERS/Grails-Switcher/:$PATH:$JAVA_HOME/bin
 
 
 export PATH=/usr/sed-4.2/bin:$PATH
+
+
+# for gvm to autopick grails version only when cd in a grails proyect
+alias autopick='AUTO_VERSION=`grep app.grails.version application.properties` ; AUTO_VERSION=${AUTO_VERSION:19}; gvm use grails $AUTO_VERSION'
+chdir() {
+  local action="$1"; shift
+  case "$action" in
+    # popd needs special care not to pass empty string instead of no args
+    popd) [[ $# -eq 0 ]] && builtin popd || builtin popd "$*" ;;
+    cd)
+      if [ $# -eq 0 ]
+      then
+        builtin $action "$HOME" ;
+      else
+        builtin $action "$*";
+      fi;;
+    pushd) builtin $action "$*" ;;
+    *) return ;;
+  esac
+  # now do stuff in the new pwd
+
+  if [ -f ./application.properties ]
+  then
+    autopick
+  fi
+}
+alias cd='chdir cd'
+alias pushd='chdir pushd'
+alias popd='chdir popd'
+
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/Users/dnoseda/.gvm/bin/gvm-init.sh" && ! $(which gvm-init.sh) ]] && source "/Users/dnoseda/.gvm/bin/gvm-init.sh"
