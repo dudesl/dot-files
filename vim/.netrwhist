@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/dnoseda/dev/MKTools/concept-test/grails-app/views'
-let g:netrw_dirhist_2='/Users/dnoseda/dev/MKtTools/mkttools-api/webserver'
-let g:netrw_dirhist_3='/Users/dnoseda/dev/MKtTools/mkttools-api/webserver/lib'
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/dnoseda/dev/MKtTools/mkttools-payments_subscriber/redis/meli/conf'
+let g:netrw_dirhist_2='/Users/dnoseda/dev/MKtTools/mkttools-payments_subscriber/redis/meli'
+let g:netrw_dirhist_3='/Users/dnoseda/dev/MKtTools/mkttools-payments_subscriber/redis'
+let g:netrw_dirhist_4='/Users/dnoseda/dev/MKtTools/mkttools-payments_subscriber'
+let g:netrw_dirhist_5='/Users/dnoseda/dev/MKtTools'
+let g:netrw_dirhist_6='/Users/dnoseda/dev/MKtTools/mkttools-api'
+let g:netrw_dirhist_7='/Users/dnoseda/dev/MKtTools/mkttools-payments_subscriber/redis/meli/bin'

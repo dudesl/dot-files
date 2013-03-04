@@ -113,7 +113,7 @@ alias ec2metric='ssh -i /home/dnoseda/soft/amazon/meli.arquitectura.mati.pem roo
 alias stg-run-war='rm -rf target/ && grails clean && grails -Dgrails.env=stg run-war'
 alias ui-run-war='rm -rf target/ && grails clean && grails -Dgrails.env=uiperf run-war'
 alias test-port='export JAVA_OPTS="$JAVA_OPTS -Dserver.port=8081 -Dgrails.server.port.http=8081 "'
-alias clean-orig='rm -rf `find . -regex .+\.orig`'
+alias clean-orig='rm -v $(find . -name "*.orig")'
 alias clean-svn='rm -rf `find . -type d -name .svn`'
 alias v='gvim --remote-silent'
 alias jsonpretty='python -mjson.tool'
@@ -313,7 +313,7 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=~/dev/OTHERS/Grails-Switcher/:$PATH:$JAVA_HOME/bin
 
 
-export PATH=/usr/sed-4.2/bin:$PATH
+export PATH=/usr/local/sbin:/usr/sed-4.2/bin:$PATH
 
 
 # for gvm to autopick grails version only when cd in a grails proyect
@@ -323,15 +323,15 @@ chdir() {
   case "$action" in
     # popd needs special care not to pass empty string instead of no args
     popd) [[ $# -eq 0 ]] && builtin popd || builtin popd "$*" ;;
-    cd)
-      if [ $# -eq 0 ]
-      then
-        builtin $action "$HOME" ;
-      else
-        builtin $action "$*";
-      fi;;
-    pushd) builtin $action "$*" ;;
-    *) return ;;
+  cd)
+    if [ $# -eq 0 ]
+    then
+      builtin $action "$HOME" ;
+    else
+      builtin $action "$*";
+    fi;;
+  pushd) builtin $action "$*" ;;
+*) return ;;
   esac
   # now do stuff in the new pwd
 
@@ -344,7 +344,12 @@ alias cd='chdir cd'
 alias pushd='chdir pushd'
 alias popd='chdir popd'
 
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
 
+alias gitk='gitk 2> /dev/null &'
+alias gitka='gitk --all 2> /dev/null &'
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/Users/dnoseda/.gvm/bin/gvm-init.sh" && ! $(which gvm-init.sh) ]] && source "/Users/dnoseda/.gvm/bin/gvm-init.sh"

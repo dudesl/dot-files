@@ -295,6 +295,7 @@ command! -nargs=0 W :call W("<args>")
 
 " ident for groovy
 function! GIdent()
+	execute 'mz'
 	execute ':%s/{\s*\n/{\r/g'
 	execute ':%s/\[\s*\n/[\r/g'
 	execute ':%s/->\s*\n/->\r/g'
@@ -303,6 +304,7 @@ function! GIdent()
 	execute ':g/->\s*\n/normal j0>i{<<'
 	execute ':g/\[\s*\n/normal j0>i['
 	execute ':g/(\s*\n/normal j0>i('
+	execute "'z"
 endfunction
 command! -nargs=0 GIdent :call GIdent()
 
