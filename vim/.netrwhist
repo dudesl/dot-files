@@ -1,9 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/dnoseda/dev/MKtTools/mkttools-payments_subscriber/redis/meli/conf'
-let g:netrw_dirhist_2='/Users/dnoseda/dev/MKtTools/mkttools-payments_subscriber/redis/meli'
-let g:netrw_dirhist_3='/Users/dnoseda/dev/MKtTools/mkttools-payments_subscriber/redis'
-let g:netrw_dirhist_4='/Users/dnoseda/dev/MKtTools/mkttools-payments_subscriber'
-let g:netrw_dirhist_5='/Users/dnoseda/dev/MKtTools'
-let g:netrw_dirhist_6='/Users/dnoseda/dev/MKtTools/mkttools-api'
-let g:netrw_dirhist_7='/Users/dnoseda/dev/MKtTools/mkttools-payments_subscriber/redis/meli/bin'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/dnoseda/dev/mine/dhack/src/main/webapp/WEB-INF/pages'
+let g:netrw_dirhist_2='/Users/dnoseda/dev/mine/dhack/src/main/webapp/WEB-INF'
+let g:netrw_dirhist_3='/Users/dnoseda/dev/mine/dhack/src/main/webapp'
+let g:netrw_dirhist_4='/Users/dnoseda/dev/mine/dhack/src/main/webapp/js'

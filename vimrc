@@ -289,7 +289,7 @@ command! -nargs=1 RFind :call RFind("<args>")
 
 " Alias for saving
 function! W(name)
-	execute ":w"
+	execute ":wall"
 endfunction
 command! -nargs=0 W :call W("<args>")
 

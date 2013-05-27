@@ -348,8 +348,13 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-alias gitk='gitk 2> /dev/null &'
-alias gitka='gitk --all 2> /dev/null &'
+alias gtk='gitk 2> /dev/null &'
+alias gtka='gitk --all 2> /dev/null &'
+alias meli=/usr/local/share/python/meli
+complete -C 'meli' meli
+alias storybook=/Users/dnoseda/opt/storybook4/storybook
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/Users/dnoseda/.gvm/bin/gvm-init.sh" && ! $(which gvm-init.sh) ]] && source "/Users/dnoseda/.gvm/bin/gvm-init.sh"
+
+
