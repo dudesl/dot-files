@@ -425,6 +425,7 @@ nmap <c-PageDown> :tabn<cr>
 " to callerId: ${callerId} && siteId: ${callerId} "
 " note: it goes to a blank
 let @h='yf Pi=${kDf i}'
+let @j='*NVGNJGNwi'
 
 " always source .vimrc when saving
 if has("autocmd")

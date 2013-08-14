@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/dnoseda/dev/mine/dhack/src/main/webapp/WEB-INF/pages'
 let g:netrw_dirhist_2='/Users/dnoseda/dev/mine/dhack/src/main/webapp/WEB-INF'
 let g:netrw_dirhist_3='/Users/dnoseda/dev/mine/dhack/src/main/webapp'
@@ -7,3 +7,4 @@ let g:netrw_dirhist_4='/Users/dnoseda/dev/mine/dhack/src/main/webapp/js'
 let g:netrw_dirhist_5='/Users/dnoseda/dev/MKtTools/mkttools-admin_frontend/webserver/grails-app/views/layouts'
 let g:netrw_dirhist_6='/Users/dnoseda/dev/MKtTools/mkttools-admin_frontend/webserver/grails-app/views/login'
 let g:netrw_dirhist_7='/Users/dnoseda/dev/MKtTools/mkttools-admin_frontend/webserver/grails-app/views/authMock'
+let g:netrw_dirhist_8='/Users/dnoseda/dev/internal-rules/subdomains'

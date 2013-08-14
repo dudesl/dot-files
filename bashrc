@@ -350,8 +350,6 @@ fi
 
 alias gtk='gitk 2> /dev/null &'
 alias gtka='gitk --all 2> /dev/null &'
-alias meli=/usr/local/share/python/meli
-complete -C 'meli' meli
 alias storybook=/Users/dnoseda/opt/storybook4/storybook
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
