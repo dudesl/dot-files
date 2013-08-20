@@ -1,0 +1,1 @@
+curl -vsX POST -H "content-type:application/json" -d "{request_uri:'http://internal.mercadolibre.com/users/$1/restrictions?caller.id=$1',request_method:'GET',version:'full'}" $GENERIC_TESTING_URL | python -mjson.tool
