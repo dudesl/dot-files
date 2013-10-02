@@ -352,6 +352,8 @@ alias gtk='gitk 2> /dev/null &'
 alias gtka='gitk --all 2> /dev/null &'
 alias storybook=/Users/dnoseda/opt/storybook4/storybook
 
+export GVM_FORCE_OFFLINE=true
+
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/Users/dnoseda/.gvm/bin/gvm-init.sh" && ! $(which gvm-init.sh) ]] && source "/Users/dnoseda/.gvm/bin/gvm-init.sh"
 

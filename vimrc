@@ -254,7 +254,9 @@ function! RFind(name)
 	"let l:num=strlen(substitute(l:list, "[^\n]", "", "g"))
 
 	"if l:num < 1
-          let l:list=system("grep -slr '".a:name."'  $(find . -name \"*.groovy\" -o -name \"*.java\" -o -name \"*.html\" -o -name \"*.gsp\" -o -name \"*.sql\" -o -name \"*.xml\" -o -name \"*.yaml\" | grep -v \"/target/\") | perl -ne 'print \"$.\\t$_\"'")
+	  let query ="grep -slri '".a:name."'  $(find . -name \"*.js\" -o -name \"*.groovy\" -o -name \"*.java\" -o -name \"*.html\" -o -name \"*.gsp\" -o -name \"*.sql\" -o -name \"*.xml\" -o -name \"*.yaml\" | grep -v \"/target/\") | perl -ne 'print \"$.\\t$_\"'" 
+	  echo "query: ".query
+          let l:list=system(query)
         "endif
 
 	let l:num=strlen(substitute(l:list, "[^\n]", "", "g"))
@@ -447,4 +449,7 @@ hi LineNr ctermfg=lightgrey ctermbg=darkgray
 " copy paste with xclip + F7
 vmap <F7> :!xclip -sel clip<CR>ugv
 map <S-F7> :r!xclip -o<CR>
+
+" para on/off pegar sin formato
+set pastetoggle=<F10>
 

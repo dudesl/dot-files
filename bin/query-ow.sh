@@ -1,4 +1,5 @@
 echo '{' > topost.js.log
+echo '    "version": "full",' >> topost.js.log
 echo '    "request_method": "POST",' >> topost.js.log
 echo "    \"request_uri\": \"$QUERY_INTER_URL\"," >> topost.js.log
 echo '    "request_headers": {' >> topost.js.log
