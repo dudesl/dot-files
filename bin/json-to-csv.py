@@ -17,16 +17,27 @@ def is_number(x):
         return True
     except TypeError:
         return False
+rows =[]
+titles=dict()
+sortedTitles=dict()
 
 def collect_data(pre,d):
+    row=dict()
     for k, v in d.iteritems():
         if isinstance(v, dict):
             collect_data(pre+'__'+k,v)
         else:
             newV = v
+            newK = pre+'__'+k
             if isinstance(v, str):
                 newV = v.encode("utf-8")
-            print u'{0} : {1}'.format(pre+'__'+k, newV)
+            if not titles.has_key(newK):
+                titles[newK] = len(titles)
+                sortedTitles[titles[newK]] = newK
+
+            row[titles[newK]] = newV
+            print u'{0} : {1}'.format(newK, newV)
+    rows.append(row)
 
 filename = sys.argv[1]
 #fileout = sys.argv[2]
@@ -51,6 +62,27 @@ else:
 
 for a in to_analize:
     collect_data("",a)
+
+print titles
+
+row_titles = []
+for i in range(0,len(sortedTitles)):
+    row_titles.append(sortedTitles[i])
+
+csvfile = open('salida.csv','w')
+writer = csv.writer(csvfile, delimiter=',', quotechar='\'')
+writer.writerow(row_titles)
+
+for row in rows:
+    csv_row = []
+    for l in range(0,len(titles)):
+        if row.has_key(l):
+            csv_row.append(row[l])
+        else:
+            csv_row.append("")
+    writer.writerow(csv_row)
+
+
 
 """
 columns = dict()
