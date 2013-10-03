@@ -9,19 +9,30 @@ import sys
 import re
 import csv
 import io
+import codecs
 
-def collect_data(d):
+def is_number(x):
+    try:
+        x + 1
+        return True
+    except TypeError:
+        return False
+
+def collect_data(pre,d):
     for k, v in d.iteritems():
         if isinstance(v, dict):
-            collect_data(v)
+            collect_data(pre+'__'+k,v)
         else:
-            print "{0} : {1}".format(k, v)
+            newV = v
+            if isinstance(v, str):
+                newV = v.encode("utf-8")
+            print u'{0} : {1}'.format(pre+'__'+k, newV)
 
 filename = sys.argv[1]
 #fileout = sys.argv[2]
 
 print 'abriendo archivo '+filename
-f = io.open(filename, "r")
+f = codecs.open(filename, "r",encoding="utf-8")
 
 text = f.read()
 
@@ -39,7 +50,7 @@ else:
     to_analize=json_content
 
 for a in to_analize:
-    collect_data(a)
+    collect_data("",a)
 
 """
 columns = dict()
