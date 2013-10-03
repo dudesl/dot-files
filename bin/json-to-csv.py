@@ -37,7 +37,7 @@ def collect_data(pre,d):
 
             row[titles[newK]] = newV
             print u'{0} : {1}'.format(newK, newV)
-    rows.append(row)
+            rows.append(row)
 
 filename = sys.argv[1]
 #fileout = sys.argv[2]
@@ -75,9 +75,13 @@ writer.writerow(row_titles)
 
 for row in rows:
     csv_row = []
+    print row
     for l in range(0,len(titles)):
         if row.has_key(l):
-            csv_row.append(row[l])
+            val = row[l]
+            if isinstance(row[l],str):
+                val = val.encode("ascii")
+            csv_row.append(val)
         else:
             csv_row.append("")
     writer.writerow(csv_row)
