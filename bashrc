@@ -108,6 +108,7 @@ fi
 
 alias cd..='cd ..'
 alias gsynch='sh ~/bin/gsynch.sh'
+alias gull='sh ~/bin/gull.sh'
 alias ec2server='ssh -i /home/dnoseda/soft/amazon/meli.arquitectura.mati.pem root@ec2-184-72-182-133.compute-1.amazonaws.com'
 alias ec2metric='ssh -i /home/dnoseda/soft/amazon/meli.arquitectura.mati.pem root@ec2-75-101-234-178.compute-1.amazonaws.com'
 alias stg-run-war='rm -rf target/ && grails clean && grails -Dgrails.env=stg run-war'
@@ -282,8 +283,7 @@ case $TERM in
 esac
 
 PS1="${TITLEBAR}\
-  $BLUE[$RED\$(date +%H:%M)$BLUE]\
-  $BLUE[$RED\u@\h:\w$GREEN\$(parse_git_branch)$BLUE]\
+  $BLUE[$RED\u:\w$GREEN\$(parse_git_branch)$BLUE]\
   $WHITE\$ "
 PS2='> '
 PS4='+ '
@@ -357,4 +357,7 @@ export GVM_FORCE_OFFLINE=true
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/Users/dnoseda/.gvm/bin/gvm-init.sh" && ! $(which gvm-init.sh) ]] && source "/Users/dnoseda/.gvm/bin/gvm-init.sh"
 
+
+
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 

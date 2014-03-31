@@ -25,10 +25,20 @@ def collect_data(pre,d):
     row=dict()
     for k, v in d.iteritems():
         if isinstance(v, dict):
-            collect_data(pre+'__'+k,v)
+            newK=""
+            if len(pre) > 0:
+                newK = pre+'__'+k
+            else:
+                newK = k
+            collect_data(newK)
         else:
             newV = v
-            newK = pre+'__'+k
+            newK=""
+            if len(pre) > 0:
+            if len(pre) > 0:
+                newK = pre+'__'+k
+            else:
+                newK = k
             if isinstance(v, str):
                 newV = v.encode("utf-8")
             if not titles.has_key(newK):
