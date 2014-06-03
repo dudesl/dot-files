@@ -8,8 +8,4 @@ echo '    },' >> topost.js.log
 echo "    \"request_body\": \"{\\\"schema\\\": \\\"orange\\\", \\\"query\\\": \\\"$1\\\"}\"" >> topost.js.log
 echo '}' >> topost.js.log
 
-curl -vso /tmp/results.log -H "Content-type: application/json" -X POST -d @topost.js.log $GENERIC_TESTING_URL | python -mjson.tool
-
-python ~/bin/json-to-table.py /tmp/results.log
-google-chrome /tmp/results-web.html > /dev/null 2> /dev/null & 
-
+curl -vs -H "Content-type: application/json" -X POST -d @topost.js.log $GENERIC_TESTING_URL | jq -r '.body' | jq '.'
