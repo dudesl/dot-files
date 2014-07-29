@@ -19,12 +19,20 @@ Based on eclim and http://items.sjbach.com/319/configuring-vim-right and another
 
 ### Installing:
 
+	# Create the host folder:
+	mkdir ~/dev
+	# clone the repo with:
+	git clone git@github.com:dnoseda/dot-files.git
+
+	# create the links
 	cd ~
 	ln -s ~/dev/dot-files/bin bin
 	ln -s ~/dev/dot-files/gitconfig .gitconfig
 	ln -s ~/dev/dot-files/vim .vim
 	ln -s ~/dev/dot-files/vimrc .vimrc
 	ln -s ~/dev/dot-files/bashrc .bashrc
+
+It works after you open a new terminal.
 
 ### Checking:
 
